@@ -18,5 +18,9 @@ Route::get('/', function () {
 Route::get('/toggle-hdmi', function () {
     $exit_code = \Illuminate\Support\Facades\Artisan::call('raspi:toggle-tv');
 
-    dd($exit_code);
+    if ($exit_code == 0) {
+        return "Cool. Check la télé, mais ça devrait être ok!";
+    } else {
+        return "Hum... Y'a peut-être eu une erreur, check la télé pour être certain.";
+    }
 });
