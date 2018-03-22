@@ -74,6 +74,7 @@
                 <div class="links">
                     <a href="/toggle-hdmi">Ferme / Ouvre le HDMI</a>
                     <a href="/reboot-pi">Reboot le PI</a>
+                    <a href="/poweroff-pi">Ferme le PI</a>
                 </div>
             </div>
         </div>
