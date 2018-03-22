@@ -34,3 +34,13 @@ Route::get('/reboot-pi', function () {
         return "Hum... Y'a peut-être eu une erreur, check sur la télé pour être certain.";
     }
 });
+
+Route::get('/poweroff-pi', function () {
+    $exit_code = \Illuminate\Support\Facades\Artisan::call('raspi:poweroff');
+
+    if ($exit_code == 0) {
+        return "Cool. Donne moi quelques secondes, et c'est fermé!";
+    } else {
+        return "Hum... Y'a peut-être eu une erreur, check sur la télé pour être certain.";
+    }
+});
