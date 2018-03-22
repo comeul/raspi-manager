@@ -24,3 +24,13 @@ Route::get('/toggle-hdmi', function () {
         return "Hum... Y'a peut-être eu une erreur, check la télé pour être certain.";
     }
 });
+
+Route::get('/reboot-pi', function () {
+    $exit_code = \Illuminate\Support\Facades\Artisan::call('raspi:reboot');
+
+    if ($exit_code == 0) {
+        return "Cool. Donne moi quelques secondes, ça devrait repartir!";
+    } else {
+        return "Hum... Y'a peut-être eu une erreur, check sur la télé pour être certain.";
+    }
+});
