@@ -38,7 +38,8 @@ class ToggleTvDisplay extends Command
      */
     public function handle()
     {
-        $process = new Process("./home/pi/screen-control.sh");
+        $script_location = resource_path('scripts/toggleHDMI.sh');
+        $process = new Process("bash {$script_location} toggle");
         $process->run();
     }
 }
