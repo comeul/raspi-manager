@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/toggle-hdmi', function () {
+    $exit_code = \Illuminate\Support\Facades\Artisan::call('raspi:toggle-tv');
+
+    dd($exit_code);
+});
