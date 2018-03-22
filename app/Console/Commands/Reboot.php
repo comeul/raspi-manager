@@ -38,7 +38,7 @@ class Reboot extends Command
      */
     public function handle()
     {
-        $script_location = resource_path('scripts/rebooot.sh');
+        $script_location = resource_path('scripts/reboot.sh');
         $process = new Process("bash {$script_location}");
         $process->run();
     }
